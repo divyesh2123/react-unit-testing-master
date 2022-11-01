@@ -12,10 +12,11 @@ it('sets isLoading to true when loading', () => {
   }));
 
   const c = shallow(<TestFetch />);
+  expect(c.instance().state.isLoading).toEqual(true);
   c.instance().handleClick().then(() =>
    {
     expect(c.instance().state.isLoading).toEqual(false);
   });
   
-  expect(c.instance().state.isLoading).toEqual(true);
+  
 });
